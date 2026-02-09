@@ -1,0 +1,44 @@
+{
+  "name": "vehiclaw",
+  "version": "1.0.0",
+  "description": "VehiClaw — open-source AI assistant for Android car head units, powered by OpenClaw",
+  "main": "src/plugin/index.ts",
+  "type": "module",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "start": "node --loader ts-node/esm src/plugin/index.ts",
+    "dev": "tsx watch src/plugin/index.ts",
+    "build": "tsc --outDir dist",
+    "rotate-token": "tsx src/auth/rotate-token.ts",
+    "setup-google": "tsx src/auth/google-oauth.ts",
+    "test": "echo \"Tests coming soon\""
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "ws": "^8.17.0",
+    "cors": "^2.8.5",
+    "helmet": "^7.1.0",
+    "googleapis": "^140.0.0",
+    "axios": "^1.7.2",
+    "zod": "^3.23.8",
+    "node-cron": "^3.0.3",
+    "better-sqlite3": "^9.6.0",
+    "qrcode-terminal": "^0.12.0",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.4",
+    "tsx": "^4.16.2",
+    "@types/express": "^4.17.21",
+    "@types/ws": "^8.5.10",
+    "@types/better-sqlite3": "^7.6.10",
+    "@types/cors": "^2.8.17",
+    "@types/node-cron": "^3.0.11",
+    "@types/uuid": "^9.0.7",
+    "@types/qrcode-terminal": "^0.12.2",
+    "@types/node": "^20.0.0"
+  }
+}

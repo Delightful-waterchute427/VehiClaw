@@ -1,0 +1,24 @@
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Environment
+.env
+
+# Build output
+dist/
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# VehiClaw runtime data (tokens, OAuth credentials, reminders DB)
+data/
+!data/.gitkeep
+
+# Claude Code local config (never push)
+.claude/
