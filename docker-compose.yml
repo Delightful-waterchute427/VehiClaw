@@ -1,0 +1,65 @@
+version: '3.9'
+
+# VehiClaw docker-compose — run the full stack with one command:
+#   docker compose up -d
+
+services:
+
+  # OpenClaw Gateway daemon
+  openclaw:
+    image: node:20-alpine
+    container_name: vehiclaw-openclaw
+    working_dir: /app
+    volumes:
+      - openclaw_data:/root/.openclaw
+      - ./AGENTS.md:/app/AGENTS.md:ro
+      - ./SOUL.md:/app/SOUL.md:ro
+      - ./skills:/app/skills:ro
+    environment:
+      - OPENCLAW_WORKSPACE=/root/.openclaw/workspace
+    command: >
+      sh -c "npm install -g openclaw@latest &&
+             openclaw gateway --workspace /root/.openclaw/workspace"
+    restart: unless-stopped
+    ports:
+      - "18789:18789"
+    networks:
+      - vehiclaw-net
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:18789/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
+
+  # VehiClaw bridge server + car UI
+  vehiclaw:
+    build: .
+    container_name: vehiclaw-server
+    depends_on:
+      openclaw:
+        condition: service_healthy
+    env_file:
+      - .env
+    environment:
+      - OPENCLAW_GATEWAY_URL=ws://openclaw:18789
+    volumes:
+      - vehiclaw_data:/app/data
+    ports:
+      - "${PORT:-3000}:3000"
+    restart: unless-stopped
+    networks:
+      - vehiclaw-net
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:3000/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+volumes:
+  openclaw_data:
+  vehiclaw_data:
+
+networks:
+  vehiclaw-net:
+    driver: bridge
